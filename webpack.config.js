@@ -4,7 +4,7 @@ const enabledSourceMap = MODE === "development";
 
 module.exports = {
     mode: MODE,
-    entry: './src/ts/index.ts',
+    entry: './src/js/index.js',
 
     output: {
         path: `${__dirname}/dist`,
@@ -13,10 +13,6 @@ module.exports = {
 
     module: {
         rules: [
-            {
-                test: /\.ts$/,
-                use: 'ts-loader',
-            },
             {
                 test: /\.scss/,
                 use: [
@@ -41,8 +37,6 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [
-            '.ts', '.js',
-        ],
+        extensions: ['.js'],
     },
 };
