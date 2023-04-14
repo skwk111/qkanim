@@ -1,5 +1,8 @@
+const pjson = require('./package.json');
+const TerserPlugin = require("terser-webpack-plugin")
+
 // 'production' か 'development' を指定
-const MODE = "development";
+const MODE = "production";
 const enabledSourceMap = MODE === "development";
 
 module.exports = {
@@ -39,4 +42,27 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
     },
+
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                extractComments: {
+                    condition: enabledSourceMap ? false : /^\**!|@preserve|@license|@cc_on/i,
+                    banner: () => {
+                        return `QkAnim v${pjson.version} | ${pjson.author.name} | https://qkanim.com/LICENSE`;
+                    },
+                },
+                terserOptions: {
+                    format: {
+                        comments: enabledSourceMap
+                    },
+
+                    compress: {
+                        drop_console: enabledSourceMap, // console.log を出力するかどうか
+                    },
+                },
+            }),
+        ],
+    }
 };
