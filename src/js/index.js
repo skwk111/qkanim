@@ -3,11 +3,12 @@
  * @author skwk111 <support@qkanim.com>
  * @copyright skwk111
  * @license MIT
- * @see https://opensource.org/licenses/MIT
- * @see https://github.com/skwk111/qkanim/blob/main/LICENSE | QkAnimライセンスについて
+ * @see https://opensource.org/licenses/MIT <br>
+ * [QkAnimライセンスについて]{@link https://github.com/skwk111/qkanim/blob/main/LICENSE}
  * @since v1.0.0
  * @version v1.0.0
  */
+
 import '../scss/style.scss';
 import './QkList';
 import { QkList } from './QkList';
@@ -25,6 +26,23 @@ window.addEventListener('load', () => {
      */
     const QK_LIST_NODE = document.querySelectorAll(`[class*='qk-list']`);
 
+
+    /**
+     * 交差したときに呼び出す関数
+     * @param {IntersectionObserverEntry[]} entries - 監視対象要素軍
+     */
+    const doWhenIntersect = (entries) => {
+        entries.forEach(entry => {
+            const class_list = entry.target.classList;
+            if (entry.isIntersecting) {
+                if (class_list.contains('in-view')) return;
+                class_list.add('in-view');
+            } else if (!class_list.contains('qk-once')) {
+                if (!class_list.contains('in-view')) return;
+                class_list.remove('in-view');
+            }
+        });
+    }
 
     /**
      * 取得した要素配列
@@ -53,20 +71,3 @@ window.addEventListener('load', () => {
         QK_LIST.init();
     });
 });
-
-/**
- * 交差したときに呼び出す関数
- * @param {IntersectionObserverEntry[]} entries
- */
-const doWhenIntersect = (entries) => {
-    entries.forEach(entry => {
-        const class_list = entry.target.classList;
-        if (entry.isIntersecting) {
-            if (class_list.contains('in-view')) return;
-            class_list.add('in-view');
-        } else if (!class_list.contains('qk-once')) {
-            if (!class_list.contains('in-view')) return;
-            class_list.remove('in-view');
-        }
-    });
-}

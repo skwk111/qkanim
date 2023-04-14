@@ -1,4 +1,9 @@
 // @ts-check
+/**
+ * @file QkList.js
+ * @since v1.0.0
+ * @version v1.0.0
+ */
 
 /**
  * リストアニメーション実装クラス
@@ -30,8 +35,7 @@ export class QkList {
     childElementList;
 
     /**
-     * qk-listから始まるクラス名の要素
-     * @param {Element} element 
+     * @param {Element} element - qk-listから始まるクラス名の要素
      */
     constructor(element) {
 
