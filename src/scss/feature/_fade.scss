@@ -1,0 +1,17 @@
+@layer QkAnim {
+
+    // フェードイン
+    .qk-fade-in {
+        opacity: 0;
+    }
+
+    // フェードアウト
+    .qk-fade-out {
+        opacity: 1;
+    }
+
+    // フェードインをして元の透明度に戻す
+    .qk.in-view .qk-fade-out {
+        --qk-fade-opac: 0;
+    }
+}

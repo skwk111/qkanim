@@ -1,0 +1,22 @@
+@layer QkAnim {
+
+    // 上からの表示
+    .qk-mask-top {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    // 右からの表示
+    .qk-mask-right {
+        clip-path: inset(0 0 0 100%);
+    }
+
+    // 下からの表示
+    .qk-mask-bottom {
+        clip-path: inset(100% 0 0 0);
+    }
+
+    // 左からの表示
+    .qk-mask-left {
+        clip-path: inset(0 100% 0 0);
+    }
+}

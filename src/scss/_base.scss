@@ -1,0 +1,19 @@
+@layer QkAnim {
+
+    :not(canvas, .qk-once, [class*="qk-list"])[class*="qk-"] {
+        // 各アニメーションの時間を設定
+        transition: translate var(--qk-slide-dur), opacity var(--qk-fade-dur), clip-path var(--qk-mask-dur);
+    }
+
+    .qk.in-view :not(canvas)[class*="qk-"],
+    .qk-once.in-view :not(canvas)[class*="qk-"] {
+        // スライド位置を元の位置に戻す
+        translate: 0 0;
+
+        // フェードアニメーション後の透明度を設定
+        opacity: var(--qk-fade-opac);
+
+        // クリップパスを解除
+        clip-path: inset(0);
+    }
+}

@@ -1,0 +1,17 @@
+// カスタム変数
+@use 'root';
+
+// QkAnimのベースプロパティ
+@use 'base';
+
+// フェードアニメーション関係
+@use 'feature/fade';
+
+// スライドアニメーション関係
+@use 'feature/slide';
+
+// マスク（クリップパス利用）アニメーション関係
+@use 'feature/mask';
+
+// リストアニメーション関係
+@use 'feature/list';

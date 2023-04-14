@@ -1,0 +1,29 @@
+@layer QkAnim {
+
+    // 上からのスライド
+    .qk-slide-top {
+        --qk-slide-x: 0;
+        --qk-slide-y: -30px;
+    }
+
+    // 右からのスライド
+    .qk-slide-right {
+        --qk-slide-y: 0;
+    }
+
+    // 下からのスライド
+    .qk-slide-bottom {
+        --qk-slide-x: 0;
+    }
+
+    // 左からのスライド
+    .qk-slide-left {
+        --qk-slide-x: -30px;
+        --qk-slide-y: 0;
+    }
+
+    // スライドクラス
+    [class*="qk-slide"] {
+        translate: var(--qk-slide-x) var(--qk-slide-y);
+    }
+}

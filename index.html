@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QkAnim.js</title>
+
+    <style>
+        img {
+            max-width: 100%;
+        }
+
+        .wrap,
+        .list-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .list-wrap ul {
+            width: 512px;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>QkAnim.js</h1>
+        <p>使用している画像は、Stable Diffusion web UIを使用して作成しました。</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>フェードアニメーション</h2>
+            <div class="wrap qk">
+                <section>
+                    <h3>qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト" class="qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-fade-out</h3>
+                    <img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト" class="qk-fade-out">
+                </section>
+            </div>
+        </section>
+
+        <section>
+            <h2>スライドアニメーション</h2>
+            <div class="wrap qk">
+                <section>
+                    <h3>qk-slide-top</h3>
+                    <img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト" class="qk-slide-top">
+                </section>
+                <section>
+                    <h3>qk-slide-right</h3>
+                    <img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト" class="qk-slide-right">
+                </section>
+                <section>
+                    <h3>qk-slide-bottom</h3>
+                    <img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト" class="qk-slide-bottom">
+                </section>
+                <section>
+                    <h3>qk-slide-left</h3>
+                    <img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト" class="qk-slide-left">
+                </section>
+            </div>
+        </section>
+
+        <section>
+            <h2>スライドアニメーション＋フェードイン</h2>
+            <div class="wrap qk">
+                <section>
+                    <h3>qk-slide-top + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト" class="qk-slide-top qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-slide-right + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト" class="qk-slide-right qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-slide-bottom + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"
+                        class="qk-slide-bottom qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-slide-left + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト" class="qk-slide-left qk-fade-in">
+                </section>
+            </div>
+        </section>
+
+        <section>
+            <h2>マスクアニメーション</h2>
+            <div class="wrap qk">
+                <section>
+                    <h3>qk-mask-top</h3>
+                    <img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト" class="qk-mask-top">
+                </section>
+                <section>
+                    <h3>qk-mask-right</h3>
+                    <img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト" class="qk-mask-right">
+                </section>
+                <section>
+                    <h3>qk-mask-bottom</h3>
+                    <img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト" class="qk-mask-bottom">
+                </section>
+                <section>
+                    <h3>qk-mask-left</h3>
+                    <img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト" class="qk-mask-left">
+                </section>
+            </div>
+        </section>
+
+        <section>
+            <h2>マスクアニメーション＋フェードイン</h2>
+            <div class="wrap qk">
+                <section>
+                    <h3>qk-mask-top + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト" class="qk-mask-top qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-mask-right + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト" class="qk-mask-right qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-mask-bottom + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト" class="qk-mask-bottom qk-fade-in">
+                </section>
+                <section>
+                    <h3>qk-mask-left + qk-fade-in</h3>
+                    <img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト" class="qk-mask-left qk-fade-in">
+                </section>
+            </div>
+        </section>
+
+        <section>
+            <h2>リストアニメーション</h2>
+
+            <div class="list-wrap">
+                <section>
+                    <h3>.qk-list</h3>
+                    <ul class="qk-list">
+                        <li><img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト"></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>.qk-list</h3>
+                    <ul class="qk-list-fade">
+                        <li><img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト"></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>.qk-list-slide</h3>
+                    <ul class="qk-list-slide">
+                        <li><img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト"></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>.qk-list-slide-fade</h3>
+                    <ul class="qk-list-slide-fade">
+                        <li><img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト"></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>.qk-list-mask</h3>
+                    <ul class="qk-list-mask">
+                        <li><img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト"></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>.qk-list-mask-fade</h3>
+                    <ul class="qk-list-mask-fade">
+                        <li><img src="https://demo.qkanim.com/images/girl.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl2.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl3.webp" alt="Aiイラスト"></li>
+                        <li><img src="https://demo.qkanim.com/images/girl4.webp" alt="Aiイラスト"></li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><small>&copy; 2023 QkAnim.js</small></p>
+    </footer>
+
+    <script src="dist/qkanim.js"></script>
+</body>
+
+</html>
