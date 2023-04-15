@@ -2,7 +2,7 @@ const pjson = require('./package.json');
 const TerserPlugin = require("terser-webpack-plugin")
 
 // 'production' か 'development' を指定
-const MODE = "production";
+const MODE = "development";
 const enabledSourceMap = MODE === "development";
 
 module.exports = {
