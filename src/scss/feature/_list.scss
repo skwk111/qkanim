@@ -1,7 +1,6 @@
 @layer QkAnim {
 
-    ul[class*="qk-list"],
-    ol[class*="qk-list"] {
+    :is(ul, ol)[class*="qk-list"] {
         --qk-list-dur: 3s;
         position: relative;
         margin: 0;
@@ -13,75 +12,140 @@
         overflow: hidden;
     }
 
-    ul[class*="qk-list"]>li,
-    ol[class*="qk-list"]>li {
+    :is(ul, ol)[class*="qk-list"]>li {
         position: absolute;
     }
 
-    ul[class*="qk-list"] *,
-    ol[class*="qk-list"] * {
+    :is(ul, ol)[class*="qk-list"] * {
         width: inherit;
         height: inherit;
     }
 
-    ul.qk-list>li {
+    :is(ul, ol).qk-list>li {
         opacity: 0;
     }
 
-    ul.qk-list>li.qk-list-anim-begin {
+    :is(ul, ol).qk-list>li.qk-list-anim-begin {
         opacity: 1;
     }
 
-    ul.qk-list-fade>li {
+    :is(ul, ol).qk-list-fade>li {
         opacity: 0;
         transition: calc(var(--qk-list-dur) / 3);
     }
 
-    ul.qk-list-fade>li.qk-list-anim-begin {
+    :is(ul, ol).qk-list-fade>li.qk-list-anim-begin {
         opacity: 1;
     }
 
-    ul.qk-list-slide>li {
+    :is(ul, ol).qk-list-slide>li {
         opacity: 0;
         translate: -30px;
     }
 
-    ul.qk-list-slide>li.qk-list-anim-begin {
+    :is(ul, ol).qk-list-slide>li.qk-list-anim-begin {
         opacity: 1;
         translate: 0 0;
         transition: calc(var(--qk-list-dur) / 3);
     }
 
-    ul.qk-list-slide-fade>li {
+    :is(ul, ol).qk-list-slide-fade>li {
         opacity: 0;
         translate: -30px;
         transition: calc(var(--qk-list-dur) / 3);
     }
 
-    ul.qk-list-slide-fade>li.qk-list-anim-begin {
+    :is(ul, ol).qk-list-slide-fade>li.qk-list-anim-begin {
         opacity: 1;
         translate: 0 0;
     }
 
-    ul.qk-list-mask>li {
+    :is(ul, ol).qk-list-mask>li {
         opacity: 0;
         clip-path: inset(0 100% 0 0);
         transition: clip-path calc(var(--qk-list-dur) / 3);
     }
 
-    ul.qk-list-mask>li.qk-list-anim-begin {
+    :is(ul, ol).qk-list-mask>li.qk-list-anim-begin {
         opacity: 1;
         clip-path: inset(0);
     }
 
-    ul.qk-list-mask-fade>li {
+    :is(ul, ol).qk-list-mask-fade>li {
         opacity: 0;
         clip-path: inset(0 100% 0 0);
         transition: calc(var(--qk-list-dur) / 3);
     }
 
-    ul.qk-list-mask-fade>li.qk-list-anim-begin {
+    :is(ul, ol).qk-list-mask-fade>li.qk-list-anim-begin {
         opacity: 1;
         clip-path: inset(0);
+    }
+
+    // アニメーション効果を削除・軽減の設定をした場合に有効化するスタイル
+    @media (prefers-reduced-motion: reduce) {
+
+        :is(ul, ol)[class*="qk-list"] {
+            display: flex;
+            flex-wrap: wrap;
+
+            overflow: hidden;
+        }
+
+        :is(ul, ol)[class*=qk-list] * {
+            width: auto;
+            height: auto;
+            vertical-align: top;
+        }
+
+        :is(ul, ol)[class*="qk-list"]>li {
+            position: static;
+            transition: 0s !important;
+
+            // スライド位置を元の位置に戻す
+            translate: 0 0 !important;
+
+            // フェードアニメーション後の透明度を設定
+            opacity: 1 !important;
+
+            // クリップパスを解除
+            clip-path: inset(0) !important;
+        }
+
+        /* 1つの場合 */
+        :is(:is(ul, ol), ol)[class*="qk-list"]>li:only-child {
+            width: 100%;
+        }
+
+        /* 2つの場合 */
+        :is(ul, ol)[class*="qk-list"]:has(>li:first-child:nth-last-child(2)) {
+            display: grid;
+        }
+
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(2),
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(2)~li {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(2)~li {
+            grid-row: 2;
+        }
+
+        /* 3つの場合 */
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(3),
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(3)~li {
+            width: 50%;
+        }
+
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(3)~li:last-child {
+            width: 100%;
+        }
+
+        /* 4つの場合 */
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(n + 4),
+        :is(ul, ol)[class*="qk-list"]>li:first-child:nth-last-child(n + 4)~li {
+            width: 50%;
+        }
     }
 }

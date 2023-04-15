@@ -16,4 +16,26 @@
         // クリップパスを解除
         clip-path: inset(0);
     }
+
+    @media (prefers-reduced-motion: reduce) {
+
+        :not(canvas)[class*="qk-"] {
+            --qk-fade-dur: 0s;
+            --qk-slide-dur: 0s;
+            --qk-mask-dur: 0s;
+
+            // スライド位置を元の位置に戻す
+            translate: 0 0 !important;
+
+            // フェードアニメーション後の透明度を設定
+            opacity: var(--qk-fade-opac) !important;
+
+            // クリップパスを解除
+            clip-path: inset(0) !important;
+        }
+
+        .qk-fade-out {
+            --qk-fade-opac: 0;
+        }
+    }
 }
