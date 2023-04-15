@@ -43,6 +43,9 @@ export class QkList {
 
         this.element = element;
 
+        // 要素の取得に失敗していたら、終了
+        if (!this.element) return;
+
         // 子要素がない場合、終了
         if (!this.element.firstElementChild) return;
 
@@ -61,7 +64,7 @@ export class QkList {
          * --qk-list-durの取得
          * @type {string}
          */
-        const list_dur_str = getComputedStyle(this.element).getPropertyValue('--qk-list-dur');
+        const list_dur_str = this.getQkListDurStr();
 
         /**
          * --qk-list-durからミリ秒の数値に変換
@@ -74,13 +77,21 @@ export class QkList {
         setInterval(this.nextElementAddClass, DURATION_MIN)
     }
 
+    getQkListDurStr = () => {
+        if (!window || !this.element) return "0s";
+
+        const computedStyle = window.getComputedStyle(this.element);
+        const durInString = computedStyle.getPropertyValue('--qk-list-dur');
+        return durInString;
+    }
+
     /**
      * アクティブ(qk-list-anim-begin)クラス位置を弟要素に付与
      * @returns void
      */
     nextElementAddClass = () => {
         // 画面内にない場合、処理終了
-        if (!this.element.classList.contains(this.activeAddClassName)) return;
+        if (!this.element || !this.element.classList.contains(this.activeAddClassName)) return;
 
         /**
          * HTMLCollectionからElement[]の配列に変換
