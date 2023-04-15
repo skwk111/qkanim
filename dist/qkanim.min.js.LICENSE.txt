@@ -1,7 +1,7 @@
 /**
  * @file QkAnim.js
  * @author skwk111 <support@qkanim.com>
- * @copyright skwk111
+ * @copyright (c) 2023 skwk111
  * @license MIT
  * @see https://opensource.org/licenses/MIT <br>
  * [QkAnimライセンスについて]{@link https://github.com/skwk111/qkanim/blob/main/LICENSE}
