@@ -7,7 +7,7 @@
     "build": "webpack",
     "start": "webpack serve",
     "watch": "webpack --watch",
-    "doc": "jsdoc -r src/js src/js/README.md"
+    "doc": "jsdoc -r src/js"
   },
   "keywords": [],
   "author": {

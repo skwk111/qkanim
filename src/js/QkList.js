@@ -1,6 +1,8 @@
 // @ts-check
 /**
  * @file QkList.js
+ * @author skwk111 <support@qkanim.com>
+ * @copyright (c) 2023 skwk111
  * @since v1.0.0
  * @version v1.0.0
  */
