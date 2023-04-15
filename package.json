@@ -20,7 +20,7 @@
   "bugs": "https://github.com/skwk111/qkanim/issues",
   "repository": {
     "type": "git",
-    "url": "https://skwk111/qkanim.git"
+    "url": "https://github.com/skwk111/qkanim.git"
   },
   "volta": {
     "node": "18.15.0"
