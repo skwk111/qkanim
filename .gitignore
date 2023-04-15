@@ -1,2 +1,5 @@
 # 除外ディレクトリ
 node_modules/
+
+# JSDoc
+out/
