@@ -20,7 +20,7 @@
 ### HTML
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/qkanim@1.0.0/dist/qkanim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qkanim@1.2.0/dist/qkanim.min.js"></script>
 ```
 
 2. `HTML`要素にアニメーション用のクラス名を設定します。例えば、画像を上からスライドインするアニメーションを設定する場合は、以下のように`qk`クラスで画像要素を囲い、`qk-slide-top`クラスを追加します。
