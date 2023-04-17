@@ -1,6 +1,6 @@
 {
   "name": "qkanim",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Animation library for quickly decorating a website",
   "main": "dist/qkanim.min.js",
   "scripts": {
