@@ -1,5 +1,9 @@
 # [QkAnim](https://qkanim.com)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/skwk111/qkanim)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/skwk111/qkanim)
+![NPM](https://img.shields.io/npm/l/qkanim)
+
 `QkAnim.js`は、クラス名を利用して簡単にアニメーションを追加するJavaScriptライブラリです。
 
 ## 使用方法
